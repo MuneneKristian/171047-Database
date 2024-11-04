@@ -1,4 +1,4 @@
---table for Beneficiaries
+--table creation for Beneficiaries
 
 CREATE TABLE Beneficiaries (
     beneficiary_id INT PRIMARY KEY AUTO_INCREMENT,
