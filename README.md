@@ -38,3 +38,13 @@ CREATE TABLE Food_Distribution (
     FOREIGN KEY (beneficiary_id) REFERENCES Beneficiaries(beneficiary_id) ON DELETE CASCADE,
     FOREIGN KEY (food_item_id) REFERENCES Food_Items(food_item_id) ON DELETE CASCADE
 );
+-- Table: Health_Metrics
+CREATE TABLE Health_Metrics (
+    metric_id INT PRIMARY KEY AUTO_INCREMENT,
+    beneficiary_id INT NOT NULL,
+    date_recorded DATE NOT NULL,
+    BMI DECIMAL(5,2),
+    anemia_status VARCHAR(50),
+    malnutrition_status VARCHAR(50),
+    FOREIGN KEY (beneficiary_id) REFERENCES Beneficiaries(beneficiary_id) ON DELETE CASCADE
+);
