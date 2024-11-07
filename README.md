@@ -25,3 +25,4 @@ CREATE TABLE Food_Items (
     food_item_id INT PRIMARY KEY AUTO_INCREMENT,
     food_item_name VARCHAR(100) NOT NULL UNIQUE
 );
+
