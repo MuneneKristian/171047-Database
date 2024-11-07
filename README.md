@@ -26,3 +26,15 @@ CREATE TABLE Food_Items (
     food_item_name VARCHAR(100) NOT NULL UNIQUE
 );
 
+-- Table: Food_Distribution
+CREATE TABLE Food_Distribution (
+    distribution_id INT PRIMARY KEY AUTO_INCREMENT,
+    program_id INT NOT NULL,
+    beneficiary_id INT NOT NULL,
+    distribution_date DATE NOT NULL,
+    food_item_id INT NOT NULL,
+    quantity INT NOT NULL CHECK (quantity > 0),
+    FOREIGN KEY (program_id) REFERENCES Nutrition_Programs(program_id) ON DELETE CASCADE,
+    FOREIGN KEY (beneficiary_id) REFERENCES Beneficiaries(beneficiary_id) ON DELETE CASCADE,
+    FOREIGN KEY (food_item_id) REFERENCES Food_Items(food_item_id) ON DELETE CASCADE
+);
