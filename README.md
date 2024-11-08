@@ -48,3 +48,12 @@ CREATE TABLE Health_Metrics (
     malnutrition_status VARCHAR(50),
     FOREIGN KEY (beneficiary_id) REFERENCES Beneficiaries(beneficiary_id) ON DELETE CASCADE
 );
+-- Table: Program_Effectiveness
+CREATE TABLE Program_Effectiveness (
+    effectiveness_id INT PRIMARY KEY AUTO_INCREMENT,
+    program_id INT NOT NULL,
+    reach INT NOT NULL CHECK (reach >= 0),
+    coverage_area VARCHAR(100),
+    outcome VARCHAR(255),
+    FOREIGN KEY (program_id) REFERENCES Nutrition_Programs(program_id) ON DELETE CASCADE
+);
