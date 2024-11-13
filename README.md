@@ -1,7 +1,7 @@
 --table creation for Beneficiaries
 
 CREATE TABLE Beneficiaries (
-    beneficiary_id INT PRIMARY KEY AUTO_INCREMENT,
+    beneficiary_id INT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     age INT NOT NULL CHECK (age >= 0),
@@ -15,7 +15,7 @@ CREATE TABLE Beneficiaries (
 --table creation for Nutrition_Programs
 
 CREATE TABLE Nutrition_Programs (
-    program_id INT PRIMARY KEY AUTO_INCREMENT,
+    program_id INT PRIMARY KEY,
     program_name VARCHAR(100) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
@@ -27,13 +27,13 @@ CREATE TABLE Nutrition_Programs (
 --table creation for Food_Items
 
 CREATE TABLE Food_Items (
-    food_item_id INT PRIMARY KEY AUTO_INCREMENT,
+    food_item_id INT PRIMARY KEY,
     food_item_name VARCHAR(100) NOT NULL UNIQUE
 );
 
 --table creation for Food_Distribution
 CREATE TABLE Food_Distribution (
-    distribution_id INT PRIMARY KEY AUTO_INCREMENT,
+    distribution_id INT PRIMARY KEY,
     program_id INT NOT NULL,
     beneficiary_id INT NOT NULL,
     distribution_date DATE NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE Food_Distribution (
 );
 -- Table: Health_Metrics
 CREATE TABLE Health_Metrics (
-    metric_id INT PRIMARY KEY AUTO_INCREMENT,
+    metric_id INT PRIMARY KEY,
     beneficiary_id INT NOT NULL,
     date_recorded DATE NOT NULL,
     BMI DECIMAL(5,2),
@@ -55,7 +55,7 @@ CREATE TABLE Health_Metrics (
 );
 -- Table: Program_Effectiveness
 CREATE TABLE Program_Effectiveness (
-    effectiveness_id INT PRIMARY KEY AUTO_INCREMENT,
+    effectiveness_id INT PRIMARY KEY,
     program_id INT NOT NULL,
     reach INT NOT NULL CHECK (reach >= 0),
     coverage_area VARCHAR(100),
