@@ -137,3 +137,29 @@ CREATE TABLE Program_Effectiveness (
     outcome VARCHAR(255),
     FOREIGN KEY (program_id) REFERENCES Nutrition_Programs(program_id) ON DELETE CASCADE
 );
+--inserting values into the Program_Effectiveness
+INSERT INTO Program_Effectiveness (effectiveness_id, program_id, reach, coverage_area, outcome)
+VALUES
+(1, 1, 150, 'Toyoyo', 'Improved child health'),    -- Child Nutrition effectiveness
+(2, 2, 80, 'Kiondo', 'Reduced maternal anemia'),   -- Maternal Health effectiveness
+(3, 3, 200, 'Ritichu', 'Improved general health'); -- General Health effectiveness
+
+--displaying  values of the Program_Effectiveness table
+SELECT *
+FROM Program_Effectiveness;
+
+
+--CRUD OPERATIONS
+
+--CREATE 
+--Adding data to beneficiaries
+INSERT INTO Beneficiaries (beneficiary_id, first_name, last_name, age, gender, location, household_size, health_status)
+VALUES (006, 'Catherine', 'Mwilo', 30, 'Female', 'Toyoyo', 5, 'Stable');
+--Retrieving
+SELECT *
+FROM Beneficiaries;
+
+--Retrieving Specific Data
+SELECT beneficiary_id, last_name, age, location
+FROM Beneficiaries
+WHERE age>30;
