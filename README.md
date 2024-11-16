@@ -11,7 +11,20 @@ CREATE TABLE Beneficiaries (
     health_status VARCHAR(255) NOT NULL
 );
 
+--inserting values into the tables
+INSERT INTO Beneficiaries (beneficiary_id, first_name, last_name, age, gender, location, household_size, health_status)
+VALUES
+(001, 'Jeff', 'Mwilolo', 54, 'Male', 'Toyoyo', 5, 'Stable'),
+(002, 'Natalie', 'Njiu', 36, 'Female', 'Kiondo', 7, 'Underweight'),
+(003, 'Eli', 'Kiongos', 23, 'Male', 'Ritichu', 6, 'Overweight'),
+(004, 'John', 'Kibuchi', 34, 'Male', 'Zotini', 9, 'Malnutrition'),
+(005, 'Janet', 'Esikucha', 43, 'Female', 'Toyoyo', 4, 'Overweight');
 
+--displaying the values inputed into the beneficiaries table
+SELECT *
+FROM Beneficiaries;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --table creation for Nutrition_Programs
 
 CREATE TABLE Nutrition_Programs (
@@ -23,7 +36,6 @@ CREATE TABLE Nutrition_Programs (
     target_group VARCHAR(50) NOT NULL
 );
 
-
 --table creation for Food_Items
 
 CREATE TABLE Food_Items (
@@ -32,6 +44,7 @@ CREATE TABLE Food_Items (
 );
 
 --table creation for Food_Distribution
+
 CREATE TABLE Food_Distribution (
     distribution_id INT PRIMARY KEY,
     program_id INT NOT NULL,
@@ -43,7 +56,9 @@ CREATE TABLE Food_Distribution (
     FOREIGN KEY (beneficiary_id) REFERENCES Beneficiaries(beneficiary_id) ON DELETE CASCADE,
     FOREIGN KEY (food_item_id) REFERENCES Food_Items(food_item_id) ON DELETE CASCADE
 );
--- Table: Health_Metrics
+
+-- table creation for Health_Metrics
+
 CREATE TABLE Health_Metrics (
     metric_id INT PRIMARY KEY,
     beneficiary_id INT NOT NULL,
@@ -53,7 +68,9 @@ CREATE TABLE Health_Metrics (
     malnutrition_status VARCHAR(50),
     FOREIGN KEY (beneficiary_id) REFERENCES Beneficiaries(beneficiary_id) ON DELETE CASCADE
 );
--- Table: Program_Effectiveness
+
+-- table creation for Program_Effectiveness
+
 CREATE TABLE Program_Effectiveness (
     effectiveness_id INT PRIMARY KEY,
     program_id INT NOT NULL,
