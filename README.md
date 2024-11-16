@@ -56,6 +56,21 @@ CREATE TABLE Food_Items (
     food_item_name VARCHAR(100) NOT NULL UNIQUE
 );
 
+--inserting values into the table
+INSERT INTO Food_Items (food_item_id, food_item_name)
+VALUES
+(1, 'Rice'),
+(2, 'Maize Flour'),
+(3, 'Green grams'),
+(4, 'Milk Powder'),
+(5, 'Vitamin Supplements');
+
+--displaying values entered into the table
+SELECT *
+FROM Food_Items;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 --table creation for Food_Distribution
 
 CREATE TABLE Food_Distribution (
