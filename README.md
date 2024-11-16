@@ -11,7 +11,7 @@ CREATE TABLE Beneficiaries (
     health_status VARCHAR(255) NOT NULL
 );
 
---inserting values into the tables
+--inserting values into the table
 INSERT INTO Beneficiaries (beneficiary_id, first_name, last_name, age, gender, location, household_size, health_status)
 VALUES
 (001, 'Jeff', 'Mwilolo', 54, 'Male', 'Toyoyo', 5, 'Stable'),
@@ -35,6 +35,19 @@ CREATE TABLE Nutrition_Programs (
     description TEXT,
     target_group VARCHAR(50) NOT NULL
 );
+
+--inserting values into the table
+INSERT INTO Nutrition_Programs (program_id, program_name, start_date, end_date, description, target_group)
+VALUES
+(1, 'Child Nutrition', '2024-01-01', '2024-06-01', 'A program to improve child nutrition.', 'Children'),
+(2, 'Maternal Health', '2024-02-01', '2024-07-01', 'Focused on maternal nutritional needs.', 'Pregnant Women'),
+(3, 'General Health', '2024-03-01', '2024-08-01', 'General health improvement for adults.', 'Adults');
+
+--displaying values in the Nutrition_Programs
+SELECT *
+FROM Nutrition_Programs;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --table creation for Food_Items
 
