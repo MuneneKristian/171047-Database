@@ -112,6 +112,21 @@ CREATE TABLE Health_Metrics (
     FOREIGN KEY (beneficiary_id) REFERENCES Beneficiaries(beneficiary_id) ON DELETE CASCADE
 );
 
+--insering values into the  Health_Metrics table
+INSERT INTO Health_Metrics(metric_id, beneficiary_id, date_recorded, BMI, anemia_status, malnutrition_status)
+VALUES
+(1, 1, '2024-02-01', 22.5, 'None', 'None'), -- Jeff's health data
+(2, 2, '2024-02-10', 17.0, 'Mild', 'Moderate'), -- Natalie's health data
+(3, 3, '2024-02-15', 18.5, 'Severe', 'None'), -- Eli's health data
+(4, 4, '2024-03-01', 16.0, 'None', 'Severe'), -- John's health data
+(5, 5, '2024-03-15', 23.0, 'None', 'None');  -- Janet's health data
+
+--displaying values of thr Health_Metrics table
+SELECT *
+FROM Health_Metrics;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 -- table creation for Program_Effectiveness
 
 CREATE TABLE Program_Effectiveness (
