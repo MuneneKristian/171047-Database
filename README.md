@@ -85,6 +85,21 @@ CREATE TABLE Food_Distribution (
     FOREIGN KEY (food_item_id) REFERENCES Food_Items(food_item_id) ON DELETE CASCADE
 );
 
+--inserting values into the Food_Distribution table
+INSERT INTO Food_Distribution (distribution_id, program_id, beneficiary_id, distribution_date, food_item_id, quantity)
+VALUES
+(1, 1, 1, '2024-01-15', 1, 10), -- Jeff receives Rice under Child Nutrition
+(2, 1, 2, '2024-01-20', 2, 15), -- Natalie receives Maize Flour under Child Nutrition
+(3, 2, 3, '2024-02-15', 4, 8),  -- Eli receives Milk Powder under Maternal Health
+(4, 3, 4, '2024-03-10', 5, 5),  -- John receives Vitamin Supplements under General Health
+(5, 1, 5, '2024-01-25', 3, 20); -- Janet receives Green grams under Child Nutrition
+
+--displaying values of the Food_Distribution table
+SELECT *
+FROM Food_Distribution;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 -- table creation for Health_Metrics
 
 CREATE TABLE Health_Metrics (
