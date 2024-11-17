@@ -190,3 +190,19 @@ JOIN Food_Distribution fd ON b.beneficiary_id = fd.beneficiary_id
 JOIN Nutrition_Programs p ON fd.program_id = p.program_id;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Aggregate Function
+--average for the household size
+SELECT AVG(household_size) AS average_household_size
+FROM Beneficiaries;
+ 
+Commit that first then urudi for the second code block:
+
+--Complex Queries
+--finding beneficiaries with the program id 1 in this case
+SELECT first_name, last_name
+FROM Beneficiaries
+WHERE location IN (
+    SELECT coverage_area
+    FROM Program_Effectiveness
+    WHERE program_id = 1
+);
