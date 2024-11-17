@@ -11,7 +11,7 @@ CREATE TABLE Beneficiaries (
     health_status VARCHAR(255) NOT NULL
 );
 
---inserting values into the tables
+--inserting values into the table
 INSERT INTO Beneficiaries (beneficiary_id, first_name, last_name, age, gender, location, household_size, health_status)
 VALUES
 (001, 'Jeff', 'Mwilolo', 54, 'Male', 'Toyoyo', 5, 'Stable'),
