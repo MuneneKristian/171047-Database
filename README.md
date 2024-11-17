@@ -135,7 +135,7 @@ CREATE TABLE Program_Effectiveness (
     program_id INT NOT NULL, --references the program being evaluated
     reach INT NOT NULL CHECK (reach >= 0),
     coverage_area VARCHAR(100),
-    outcome VARCHAR(255),
+    outcome VARCHAR(255), --outcome or impact of the program
     FOREIGN KEY (program_id) REFERENCES Nutrition_Programs(program_id) ON DELETE CASCADE
 );
 --inserting values into the Program_Effectiveness
