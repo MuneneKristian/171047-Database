@@ -149,16 +149,18 @@ VALUES
 SELECT *
 FROM Program_Effectiveness;
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --CRUD OPERATIONS
 
 --CREATE 
---Adding data to beneficiaries
+--Adding data to beneficiaries (a new record)
 INSERT INTO Beneficiaries (beneficiary_id, first_name, last_name, age, gender, location, household_size, health_status)
 VALUES (006, 'Catherine', 'Mwilo', 30, 'Female', 'Toyoyo', 5, 'Stable');
 --Retrieving
 SELECT *
 FROM Beneficiaries;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --Retrieving Specific Data
 SELECT beneficiary_id, last_name, age, location
