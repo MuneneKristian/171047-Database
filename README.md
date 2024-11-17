@@ -156,7 +156,7 @@ FROM Program_Effectiveness;
 --Adding data to beneficiaries (a new record)
 INSERT INTO Beneficiaries (beneficiary_id, first_name, last_name, age, gender, location, household_size, health_status)
 VALUES (006, 'Catherine', 'Mwilo', 30, 'Female', 'Toyoyo', 5, 'Stable');
---Retrieving
+--Retrieving all beneficiaries
 SELECT *
 FROM Beneficiaries;
 
