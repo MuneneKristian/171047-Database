@@ -188,3 +188,5 @@ SELECT b.first_name, b.last_name, p.program_name
 FROM Beneficiaries b
 JOIN Food_Distribution fd ON b.beneficiary_id = fd.beneficiary_id
 JOIN Nutrition_Programs p ON fd.program_id = p.program_id;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
