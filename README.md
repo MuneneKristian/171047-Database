@@ -105,9 +105,9 @@ FROM Food_Distribution;
 
 CREATE TABLE Health_Metrics (
     metric_id INT PRIMARY KEY,
-    beneficiary_id INT NOT NULL,
+    beneficiary_id INT NOT NULL, --references the beneficiary whose health is being tracked
     date_recorded DATE NOT NULL,
-    BMI DECIMAL(5,2),
+    BMI DECIMAL(5,2), --5 is the total no. of digits that can be stored and 2 is the digits for the decimal part
     anemia_status VARCHAR(50),
     malnutrition_status VARCHAR(50),
     FOREIGN KEY (beneficiary_id) REFERENCES Beneficiaries(beneficiary_id) ON DELETE CASCADE
