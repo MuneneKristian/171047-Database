@@ -33,7 +33,7 @@ CREATE TABLE Nutrition_Programs (
     program_name VARCHAR(100) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
-    description TEXT,
+    description TEXT, --program description
     target_group VARCHAR(50) NOT NULL --target demographic of the program
 );
 
