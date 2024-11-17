@@ -132,7 +132,7 @@ FROM Health_Metrics;
 
 CREATE TABLE Program_Effectiveness (
     effectiveness_id INT PRIMARY KEY,
-    program_id INT NOT NULL,
+    program_id INT NOT NULL, --references the program being evaluated
     reach INT NOT NULL CHECK (reach >= 0),
     coverage_area VARCHAR(100),
     outcome VARCHAR(255),
