@@ -7,11 +7,11 @@ CREATE TABLE Beneficiaries (
     age INT NOT NULL CHECK (age >= 0),
     gender VARCHAR(10) NOT NULL,
     location VARCHAR(100) NOT NULL,
-    household_size INT NOT NULL CHECK (household_size >= 0),
+    household_size INT NOT NULL CHECK (household_size >= 0), --the number of people per household
     health_status VARCHAR(255) NOT NULL
 );
 
---inserting values into the table
+--inserting values into the tables
 INSERT INTO Beneficiaries (beneficiary_id, first_name, last_name, age, gender, location, household_size, health_status)
 VALUES
 (001, 'Jeff', 'Mwilolo', 54, 'Male', 'Toyoyo', 5, 'Stable'),
@@ -23,6 +23,7 @@ VALUES
 --displaying the values inputed into the beneficiaries table
 SELECT *
 FROM Beneficiaries;
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --table creation for Nutrition_Programs
