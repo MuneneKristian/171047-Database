@@ -178,3 +178,13 @@ WHERE beneficiary_id = 002;
 -- Uncomment the following query to delete the Program Effectiveness record for program_id = 3
 -- DELETE FROM Program_Effectiveness
 -- WHERE program_id = 3;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Queries
+
+-- JOIN Query
+-- Retrieve beneficiaries and the nutrition programs they are part of
+SELECT b.first_name, b.last_name, p.program_name
+FROM Beneficiaries b
+JOIN Food_Distribution fd ON b.beneficiary_id = fd.beneficiary_id
+JOIN Nutrition_Programs p ON fd.program_id = p.program_id;
