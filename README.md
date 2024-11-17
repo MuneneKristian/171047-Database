@@ -76,8 +76,8 @@ FROM Food_Items;
 
 CREATE TABLE Food_Distribution (
     distribution_id INT PRIMARY KEY,
-    program_id INT NOT NULL,
-    beneficiary_id INT NOT NULL,
+    program_id INT NOT NULL, --references the program providing the food
+    beneficiary_id INT NOT NULL, --references the beneficiary receiving the food
     distribution_date DATE NOT NULL,
     food_item_id INT NOT NULL,
     quantity INT NOT NULL CHECK (quantity > 0), --quantity of the food item distributed (must be greater than 0)
