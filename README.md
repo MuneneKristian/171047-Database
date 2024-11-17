@@ -206,3 +206,15 @@ WHERE location IN (
     FROM Program_Effectiveness
     WHERE program_id = 1
 );
+--retrieving food items distributed to a beneficiary by name                                                                                                           
+SELECT food_item_name
+FROM Food_Items
+WHERE food_item_id IN (
+    SELECT food_item_id
+    FROM Food_Distribution
+    WHERE beneficiary_id = (
+        SELECT beneficiary_id
+        FROM Beneficiaries
+        WHERE first_name = 'Natalie' AND last_name = 'Njiu'
+    )
+);
