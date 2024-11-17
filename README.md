@@ -161,8 +161,20 @@ SELECT *
 FROM Beneficiaries;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 --Retrieving Specific Data
 SELECT beneficiary_id, last_name, age, location
 FROM Beneficiaries
 WHERE age>30;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- UPDATE
+-- Updating the health status of a beneficiary
+UPDATE Beneficiaries
+SET health_status = 'Recovering'
+WHERE beneficiary_id = 002;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- DELETE
+-- Uncomment the following query to delete the Program Effectiveness record for program_id = 3
+-- DELETE FROM Program_Effectiveness
+-- WHERE program_id = 3;
