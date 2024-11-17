@@ -80,7 +80,7 @@ CREATE TABLE Food_Distribution (
     beneficiary_id INT NOT NULL,
     distribution_date DATE NOT NULL,
     food_item_id INT NOT NULL,
-    quantity INT NOT NULL CHECK (quantity > 0),
+    quantity INT NOT NULL CHECK (quantity > 0), --quantity of the food item distributed (must be greater than 0)
     FOREIGN KEY (program_id) REFERENCES Nutrition_Programs(program_id) ON DELETE CASCADE,
     FOREIGN KEY (beneficiary_id) REFERENCES Beneficiaries(beneficiary_id) ON DELETE CASCADE,
     FOREIGN KEY (food_item_id) REFERENCES Food_Items(food_item_id) ON DELETE CASCADE
